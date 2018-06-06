@@ -48,6 +48,18 @@ public class TokenController {
         return new ResponseEntity<>(b, HttpStatus.OK);
     }
 
+    @GetMapping("/token/verify/hmac256")
+    public ResponseEntity<Map<String, String>> verifyhmac256() throws JSONException {
+        Map<String, String> b = new HashMap<>();
+        try {
+            jwtService.verify("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsInNvbWV0aGluZyI6InNvbWVPdGhlcnRoaW5nIn0.BW1jZ_E64WaCSioiOEquG_WzOb-pg8Azh4WuOkOrOYg");
+            b.put("verify", "true");
+        }catch (Exception e){
+            b.put("verify", "false");
+        }
+        return new ResponseEntity<>(b, HttpStatus.OK);
+    }
+
 
     private JSONObject createSampleClaim() throws JSONException {
         JSONObject claimPayload = new JSONObject();
