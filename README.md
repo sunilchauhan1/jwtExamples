@@ -4,9 +4,9 @@
     Copy repository 
         git clone https://github.com/sunilchauhan1/jwtExamples.git 
     Go to folder java/Demo
-        cd java/Demo
+        cd jwtExamples/java/demo/
     Run Application    
-        ./grdalew bootRun
+        ./gradlew bootRun
     To Encode sample claim with hmac algorithm use following url
         http://localhost:8080/token/encode/hmac256
     To Encode sample claim with rsa algorithm use following url    
